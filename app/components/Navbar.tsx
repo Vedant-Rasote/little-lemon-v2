@@ -2,37 +2,38 @@ import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
+    const links = {
+        left: [
+            { text: 'Account', href: '/' },
+            { text: 'Order', href: '/' },
+            { text: 'Reserve', href: '/' }
+        ],
+        right: [
+            { text: 'About', href: '#about' },
+            { text: 'Gallery', href: '#gallery' },
+            { text: 'Menu', href: '#menu' },
+            { text: 'Testimonials', href: '#testimonials' },
+            { text: 'Contact', href: '#contact' },
+        ]
+    }
+
     return (
         <header className='fixed top-0 left-0 right-0 z-30'>
             <div className="container">
                 <nav className='flex flex-row justify-between align-middle py-5 border-white border-b-2'>
                     <div className='space-x-4'>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
+                        {links.left.map((link) => {
+                            return <Link href={link.href} className='inline-block hover-accent'>
+                                <p>{link.text}</p>
+                            </Link>
+                        })}
                     </div>
                     <div className='space-x-4'>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
-                        <Link href='/' className='inline-block hover-accent'>
-                            <p>Link</p>
-                        </Link>
+                        {links.right.map((link) => {
+                            return <Link href={link.href} className='inline-block hover-accent'>
+                                <p>{link.text}</p>
+                            </Link>
+                        })}
                     </div>
                 </nav>
             </div>

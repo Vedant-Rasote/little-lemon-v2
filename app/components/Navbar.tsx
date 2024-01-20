@@ -1,41 +1,84 @@
+'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Navbar = () => {
     const links = {
         left: [
             { text: 'Account', href: '/' },
             { text: 'Order', href: '/' },
-            { text: 'Reserve', href: '/' }
+            { text: 'Reserve', href: '/' },
+            { text: 'Menu', href: '#menu' },
+
         ],
         right: [
             { text: 'About', href: '#about' },
             { text: 'Gallery', href: '#gallery' },
-            { text: 'Menu', href: '#menu' },
             { text: 'Testimonials', href: '#testimonials' },
             { text: 'Contact', href: '#contact' },
         ]
     }
 
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const toggleNav = () => setIsNavOpen(!isNavOpen);
+
     return (
         <header className='fixed top-0 left-0 right-0 z-30'>
             <div className="container">
-                <nav className='flex flex-row justify-between align-middle py-5 border-white border-b-2'>
-                    <div className='space-x-4'>
+                <nav className='flex flex-wrap flex-row justify-between align-middle py-5 border-white border-b-2'>
+                    <div className='space-x-4 self-center'>
                         {links.left.map((link) => {
-                            return <Link href={link.href} className='inline-block hover-accent'>
+                            return <Link href={link.href} className='hidden md:inline-block hover-accent'>
                                 <p>{link.text}</p>
                             </Link>
                         })}
                     </div>
-                    <div className='space-x-4'>
+                    <div className="w-100"></div>
+                    <div className='space-x-4 self-center'>
                         {links.right.map((link) => {
-                            return <Link href={link.href} className='inline-block hover-accent'>
+                            return <Link href={link.href} className='hidden md:inline-block hover-accent'>
                                 <p>{link.text}</p>
                             </Link>
                         })}
+                        <svg
+                            className={`w-[30px] md:hidden inline ${isNavOpen ? 'active' : ''}`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 12 12"
+                            stroke="#eee"
+                            strokeWidth=".6"
+                            fill="rgba(0,0,0,0)"
+                            strokeLinecap="round"
+                            style={{ cursor: 'pointer' }}
+                            onClick={toggleNav}
+                        >
+                            <g transform="translate(0, 1)">
+                                <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+                                    <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+                                    <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+                                </path>
+                                <rect width="10" height="10" stroke="none">
+                                    <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+                                </rect>
+                                <rect width="10" height="10" stroke="none">
+                                    <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+                                    <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+                                </rect>
+                            </g>
+                        </svg>
                     </div>
                 </nav>
+                <div className={`md:hidden border-white text-right border-b-2 ${isNavOpen ? 'block' : 'hidden'}`}>
+                    {links.left.map((link) => {
+                        return <Link href={link.href} className='block hover-accent py-2 border-b'>
+                            <p>{link.text}</p>
+                        </Link>
+                    })}
+                    {links.right.map((link) => {
+                        return <Link href={link.href} className='block hover-accent py-2 border-b'>
+                            <p>{link.text}</p>
+                        </Link>
+                    })}
+                </div>
             </div>
             <Link href='/' className='absolute top-5 left-1/2 transform -translate-x-1/2 rounded-md bg-body'>
                 <svg

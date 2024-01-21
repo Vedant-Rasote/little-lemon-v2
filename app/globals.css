@@ -97,3 +97,7 @@
   @apply hover:bg-[#5b564a];
   @apply transition-all
 }
+
+.radial-gradient {
+  background: 'radial-gradient(#14131333, #00000000);'
+}

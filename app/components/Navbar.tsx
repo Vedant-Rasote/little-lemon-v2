@@ -1,6 +1,7 @@
-'use client'
-import Link from 'next/link'
-import React, { useState } from 'react'
+'use client';
+import Link from 'next/link';
+import React, { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const Navbar = () => {
     const links = {
@@ -9,37 +10,46 @@ const Navbar = () => {
             { text: 'Order', href: '/' },
             { text: 'Reserve', href: '/' },
             { text: 'Menu', href: '#menu' },
-
         ],
         right: [
             { text: 'About', href: '#about' },
             { text: 'Gallery', href: '#gallery' },
             { text: 'Testimonials', href: '#testimonials' },
             { text: 'Contact', href: '#contact' },
-        ]
-    }
+        ],
+    };
 
     const [isNavOpen, setIsNavOpen] = useState(false);
     const toggleNav = () => setIsNavOpen(!isNavOpen);
+
+    const mobileMenuRef = useRef(null);
+
+    const [mobileMenuHeight, setMobileMenuHeight] = useState(0);
+
+    useEffect(() => {
+        const contentHeight = mobileMenuRef?.current?.scrollHeight || 0;
+        gsap.to(mobileMenuRef.current, { height: isNavOpen ? contentHeight : 0, duration: 0.4, ease: 'power2.inOut' });
+        setMobileMenuHeight(() => (isNavOpen ? contentHeight : 0));
+    }, [isNavOpen]);
 
     return (
         <header className='fixed top-0 left-0 right-0 z-30 backdrop-blur-md bg-body'>
             <div className="container">
                 <nav className='flex flex-wrap flex-row justify-between align-middle py-5 border-white border-b-2'>
                     <div className='space-x-4 self-center'>
-                        {links.left.map((link) => {
-                            return <Link href={link.href} className='hidden md:inline-block hover-accent'>
+                        {links.left.map((link) => (
+                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent'>
                                 <p>{link.text}</p>
                             </Link>
-                        })}
+                        ))}
                     </div>
                     <div className="w-100"></div>
                     <div className='space-x-4 self-center'>
-                        {links.right.map((link) => {
-                            return <Link href={link.href} className='hidden md:inline-block hover-accent'>
+                        {links.right.map((link) => (
+                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent'>
                                 <p>{link.text}</p>
                             </Link>
-                        })}
+                        ))}
                         <svg
                             className={`w-[30px] md:hidden inline ${isNavOpen ? 'active' : ''}`}
                             xmlns="http://www.w3.org/2000/svg"
@@ -67,17 +77,12 @@ const Navbar = () => {
                         </svg>
                     </div>
                 </nav>
-                <div className={`md:hidden border-white text-right border-b-2 ${isNavOpen ? 'block' : 'hidden'}`}>
-                    {links.left.map((link) => {
-                        return <Link href={link.href} className='block hover-accent py-2 border-b'>
+                <div ref={mobileMenuRef} className={`md:hidden border-white text-right border-b-2 ${isNavOpen ? 'block' : 'hidden'}`}>
+                    {links.left.concat(links.right).map((link) => (
+                        <Link key={link.text} href={link.href} className='block hover-accent py-2 border-b'>
                             <p>{link.text}</p>
                         </Link>
-                    })}
-                    {links.right.map((link) => {
-                        return <Link href={link.href} className='block hover-accent py-2 border-b'>
-                            <p>{link.text}</p>
-                        </Link>
-                    })}
+                    ))}
                 </div>
             </div>
             <Link href='/' className='absolute top-5 left-1/2 transform -translate-x-1/2 rounded-md bg-body'>
@@ -95,8 +100,8 @@ const Navbar = () => {
                     <path d="M18 1570H1344" stroke="white" strokeWidth="36" strokeLinecap="round" />
                 </svg>
             </Link>
-        </header >
-    )
-}
+        </header>
+    );
+};
 
-export default Navbar
+export default Navbar;

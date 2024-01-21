@@ -3,8 +3,7 @@
 import { Gowun_Batang } from 'next/font/google';
 import Link from 'next/link';
 const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
-import { Parallax, Background } from 'react-parallax';
-import Image from 'next/image';
+import { Parallax } from 'react-parallax';
 
 const About = () => {
     return (

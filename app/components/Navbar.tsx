@@ -23,7 +23,7 @@ const Navbar = () => {
     const toggleNav = () => setIsNavOpen(!isNavOpen);
 
     return (
-        <header className='fixed top-0 left-0 right-0 z-30'>
+        <header className='fixed top-0 left-0 right-0 z-30 backdrop-blur-md bg-body'>
             <div className="container">
                 <nav className='flex flex-wrap flex-row justify-between align-middle py-5 border-white border-b-2'>
                     <div className='space-x-4 self-center'>

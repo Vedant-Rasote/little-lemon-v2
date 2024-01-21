@@ -7,7 +7,7 @@ const BigImage = () => {
         <div className='container my-10'>
             <div className="md:p-10">
                 <div className="md:p-10">
-                    <div className="p-5 border">
+                    <div className="p-5 border border-[#5b564a]">
                         <Parallax bgImage='outside.webp' strength={100}>
                             <p className="p-5">Outside sitting</p>
                             <div className="block xs:hidden" style={{ height: '120px' }} />

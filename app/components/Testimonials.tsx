@@ -64,14 +64,14 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className='container'>
+    <div className='container my-10'>
       <div className="md:p-10">
         <div className="md:p-10">
           <h2 className={`${gowunBatang.className} uppercase text-lg md:text-xl lg:text-2xl my-4 accent`}>Testimonials</h2>
           <Carousel opts={{ align: "start" }} className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial) => (
-                <CarouselItem key={1} className="md:basis-1/2 lg:basis-1/2">
+                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
                   <Parallax strength={50} className='' >
                     <article key={testimonial.id} className="embla__slide flex flex-col items-start justify-between p-5 border border-[#5b564a]">
                       <div className="flex items-center gap-x-4 text-xs">

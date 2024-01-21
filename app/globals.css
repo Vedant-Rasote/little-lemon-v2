@@ -94,7 +94,7 @@
 }
 
 .hover-bg-accent {
-  @apply hover:bg-[#5b564a];
+  @apply hover:!bg-[#5b564a];
   @apply transition-all
 }
 

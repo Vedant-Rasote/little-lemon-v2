@@ -69,7 +69,7 @@ const Menu = () => {
                 <Table>
                   <TableBody>
                     {dinnerMenu.map((item, index) => (
-                      <TableRow key={index} className="border-b hover:bg-[#403c36]">
+                      <TableRow key={index} className="border-b hover:bg-[#403c36] group">
                         <TableCell className="font-medium w-1/6">{item.name}</TableCell>
                         <TableCell>{item.description}</TableCell>
                         <TableCell className="hidden md:block">

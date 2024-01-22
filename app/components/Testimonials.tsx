@@ -61,7 +61,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className='container my-10'>
+    <div className='container my-10' id='testimonials'>
       <div className="md:p-10">
         <div className="md:p-10">
           <h2 className='uppercase text-lg md:text-xl lg:text-2xl my-4 accent'>Testimonials</h2>

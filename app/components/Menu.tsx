@@ -31,7 +31,7 @@ const Menu = () => {
     { name: 'Navy Pier Baklava Delight', description: 'Rich baklava made with locally sourced nuts and honey', price: 12.99, image: '/food1.webp' },
   ];
   return (
-    <div className='container my-10'>
+    <div className='container my-10' id="menu">
       <div className="md:p-10">
         <div className="md:p-10">
           <h2 className='uppercase text-lg md:text-xl lg:text-2xl my-4 accent'>Menu</h2>

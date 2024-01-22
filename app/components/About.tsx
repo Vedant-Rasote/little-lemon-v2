@@ -5,7 +5,7 @@ import { Parallax } from 'react-parallax';
 
 const About = () => {
     return (
-        <div className='container'>
+        <div className='container' id='about'>
             <div className="md:p-10 md:flex lg:flex">
                 <div className="sm:w-full md:w-1/2 flex flex-col md:p-10 justify-center">
                     <h2 className='uppercase text-lg md:text-xl lg:text-2xl my-4 accent'>About</h2>

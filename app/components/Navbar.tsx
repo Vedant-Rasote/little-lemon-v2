@@ -2,21 +2,28 @@
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { useLenis } from '@studio-freight/react-lenis'
 
 const Navbar = () => {
     const links = {
         left: [
-            { text: 'Account', href: '/' },
-            { text: 'Order', href: '/' },
-            { text: 'Reserve', href: '/' },
-            { text: 'Menu', href: '#menu' },
+            { text: 'Account', href: '/', offset: 0, scroll: false },
+            { text: 'Order', href: '/', offset: 0, scroll: false },
+            { text: 'Reserve', href: '/', offset: 0, scroll: false },
+            { text: 'Menu', href: '#menu', offset: 0, scroll: true },
         ],
         right: [
-            { text: 'About', href: '#about' },
-            { text: 'Gallery', href: '#gallery' },
-            { text: 'Testimonials', href: '#testimonials' },
-            { text: 'Contact', href: '#contact' },
+            { text: 'About', href: '#about', offset: -100, scroll: true },
+            { text: 'Gallery', href: '#gallery', offset: -100, scroll: true },
+            { text: 'Testimonials', href: '#testimonials', offset: -100, scroll: true },
+            { text: 'Contact', href: '#contact', offset: -100, scroll: true },
         ],
+    };
+
+    const lenis = useLenis();
+
+    const handleScroll = (scroll: boolean, section: string, offset: any) => {
+        if (scroll) lenis.scrollTo(section, { offset: offset });
     };
 
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -38,7 +45,7 @@ const Navbar = () => {
                 <nav className='flex flex-wrap flex-row justify-between align-middle py-5 border-white border-b-2'>
                     <div className='space-x-4 self-center'>
                         {links.left.map((link) => (
-                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent'>
+                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent' onClick={() => handleScroll(link.scroll, link.href, -200)}>
                                 <p>{link.text}</p>
                             </Link>
                         ))}
@@ -46,7 +53,7 @@ const Navbar = () => {
                     <div className="w-100"></div>
                     <div className='space-x-4 self-center'>
                         {links.right.map((link) => (
-                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent'>
+                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent' onClick={() => handleScroll(link.scroll, link.href, -200)}>
                                 <p>{link.text}</p>
                             </Link>
                         ))}
@@ -79,7 +86,7 @@ const Navbar = () => {
                 </nav>
                 <div ref={mobileMenuRef} className={`md:hidden border-white text-right border-b-2 ${isNavOpen ? 'block' : 'hidden'}`}>
                     {links.left.concat(links.right).map((link) => (
-                        <Link key={link.text} href={link.href} className='block hover-accent py-2 border-b'>
+                        <Link key={link.text} href={link.href} className='block hover-accent py-2 border-b' onClick={() => handleScroll(link.scroll, link.href, link.offset)}>
                             <p>{link.text}</p>
                         </Link>
                     ))}

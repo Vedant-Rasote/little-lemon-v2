@@ -1,7 +1,13 @@
+'use client';
 import { Facebook, Instagram, Youtube } from 'lucide-react';
 import Link from 'next/link';
+import { useLenis } from '@studio-freight/react-lenis'
 
 const Footer = () => {
+  const lenis = useLenis();
+  const handleScroll = (section: string, offset: number) => {
+    lenis.scrollTo(section, { offset });
+  };
   return (
     <footer>
       <div className="container">
@@ -40,31 +46,31 @@ const Footer = () => {
               <tbody>
                 <tr>
                   <td>
-                    <Link key={1} href='#about' className='hidden md:inline-block hover-accent'>
+                    <Link key={1} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#about', -200)}>
                       <p>About</p>
                     </Link>
                   </td>
                   <td>
-                    <Link key={2} href='#about' className='hidden md:inline-block hover-accent'>
+                    <Link key={2} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#gallery', -200)}>
                       <p>Gallery</p>
                     </Link>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <Link key={3} href='#about' className='hidden md:inline-block hover-accent'>
+                    <Link key={3} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#menu', -200)}>
                       <p>Menu</p>
                     </Link>
                   </td>
                   <td>
-                    <Link key={4} href='#about' className='hidden md:inline-block hover-accent'>
+                    <Link key={4} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#testimonials', -200)}>
                       <p>Testimonials</p>
                     </Link>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <Link key={5} href='#about' className='hidden md:inline-block hover-accent'>
+                    <Link key={5} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#contact', -200)}>
                       <p>Contact</p>
                     </Link>
                   </td>
@@ -82,7 +88,9 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap py-5 justify-between items-center">
           <span>Copyright (C) 2024 - Little Lemon</span>
-          <span>Back to Top</span>
+          <Link key={4} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#hero', -200)}>
+            <p>Back to Top</p>
+          </Link>
         </div>
       </div>
     </footer >

@@ -1,7 +1,4 @@
 'use client'
-
-import { Gowun_Batang } from 'next/font/google';
-const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
 import { Parallax } from 'react-parallax';
 import {
   Carousel,
@@ -67,7 +64,7 @@ const Testimonials = () => {
     <div className='container my-10'>
       <div className="md:p-10">
         <div className="md:p-10">
-          <h2 className={`${gowunBatang.className} uppercase text-lg md:text-xl lg:text-2xl my-4 accent`}>Testimonials</h2>
+          <h2 className='uppercase text-lg md:text-xl lg:text-2xl my-4 accent'>Testimonials</h2>
           <Carousel opts={{ align: "start" }} className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial) => (

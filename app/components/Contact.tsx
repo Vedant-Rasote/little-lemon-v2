@@ -16,8 +16,6 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import Link from 'next/link';
-import { Gowun_Batang } from 'next/font/google';
-const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -55,7 +53,7 @@ export const Contact = () => {
     <div className='container my-10'>
       <div className="md:p-10">
         <div className="md:p-10">
-          <h2 className={`${gowunBatang.className} uppercase text-lg md:text-xl lg:text-2xl my-4 accent`}>Contact</h2>
+          <h2 className='uppercase text-lg md:text-xl lg:text-2xl my-4 accent'>Contact</h2>
           <div className="border border-[#5b564a]">
             <div className="md:flex lg:flex">
               <div className="sm:w-full md:w-1/2 flex flex-col p-5 md:p-10 justify-center">

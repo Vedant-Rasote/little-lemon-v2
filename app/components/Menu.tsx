@@ -1,7 +1,5 @@
 'use client'
 
-import { Gowun_Batang } from 'next/font/google';
-const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
 import {
   Accordion,
   AccordionContent,
@@ -36,7 +34,7 @@ const Menu = () => {
     <div className='container my-10'>
       <div className="md:p-10">
         <div className="md:p-10">
-          <h2 className={`${gowunBatang.className} uppercase text-lg md:text-xl lg:text-2xl my-4 accent`}>Menu</h2>
+          <h2 className='uppercase text-lg md:text-xl lg:text-2xl my-4 accent'>Menu</h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className=' border-b-0'>
               <AccordionTrigger className="py-6 bg-color text-white hover:bg-[#403c36] hover:px-4 border-t border-[#5b564a]">

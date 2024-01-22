@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Gowun_Batang, Gowun_Dodum } from 'next/font/google';
+import { Gowun_Batang } from 'next/font/google';
 import "./globals.css";
 import { Providers } from './Providers';
 
-const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
-const gowunDodum = Gowun_Dodum({ subsets: ['latin'], weight: '400' });
+const GowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {
   title: 'Little Lemon',
@@ -18,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${gowunDodum.className} dark`}>
+      <body className={`${GowunBatang.className} dark`}>
         <Providers>{children}</Providers>
       </body>
     </html>

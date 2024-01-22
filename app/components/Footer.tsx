@@ -1,6 +1,4 @@
 import { Facebook, Instagram, Youtube } from 'lucide-react';
-import { Gowun_Batang } from 'next/font/google';
-const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
 import Link from 'next/link';
 
 const Footer = () => {
@@ -9,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="border-y-2 border-white mx-auto grid grid-cols-1 gap-x-8 gap-y-8 py-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col lg:border-r">
-            <h1 className={`${gowunBatang.className} text-5xl mb-4`}>Little Lemon</h1>
+            <h1 className='text-5xl mb-4'>Little Lemon</h1>
             <div className="flex items-center">
               <svg
                 width="50"
@@ -76,10 +74,10 @@ const Footer = () => {
           </div>
 
           <div className='min-w-5'>
-            <p className='py-3 font-semibold'>Socials</p>
-            <Instagram size={40} strokeWidth={1.75} absoluteStrokeWidth className='border rounded-2xl p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block m-2 ml-0' />
-            <Facebook size={40} strokeWidth={1.75} absoluteStrokeWidth className='border rounded-2xl p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block m-2' />
-            <Youtube size={40} strokeWidth={1.75} absoluteStrokeWidth className='border rounded-2xl p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block m-2' />
+            <p className='py-3 font-semibold'>Folluw us</p>
+            <Instagram size={40} strokeWidth={1.75} absoluteStrokeWidth className='border-y-2 border-l-2 border-r p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
+            <Facebook size={40} strokeWidth={1.75} absoluteStrokeWidth className='border-y-2 border-x p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
+            <Youtube size={40} strokeWidth={1.75} absoluteStrokeWidth className='border-y-2 border-r-2 border-l p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
           </div>
         </div>
         <div className="flex flex-wrap py-5 justify-between items-center">

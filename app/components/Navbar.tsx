@@ -34,9 +34,13 @@ const Navbar = () => {
     const [mobileMenuHeight, setMobileMenuHeight] = useState(0);
 
     useEffect(() => {
-        const contentHeight = mobileMenuRef?.current?.scrollHeight || 0;
-        gsap.to(mobileMenuRef.current, { height: isNavOpen ? contentHeight : 0, duration: 0.4, ease: 'power2.inOut' });
-        setMobileMenuHeight(() => (isNavOpen ? contentHeight : 0));
+        const currentRef = mobileMenuRef.current as HTMLDivElement | null;
+    
+        if (currentRef) {
+            const contentHeight = currentRef.scrollHeight || 0;
+            gsap.to(currentRef, { height: isNavOpen ? contentHeight : 0, duration: 0.4, ease: 'power2.inOut' });
+            setMobileMenuHeight(() => (isNavOpen ? contentHeight : 0));
+        }
     }, [isNavOpen]);
 
     return (

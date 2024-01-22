@@ -43,7 +43,7 @@ export const Contact = () => {
       name: '',
       email: '',
       message: '',
-      terms: true,
+      terms: false,
     },
   })
 

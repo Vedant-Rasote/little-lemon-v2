@@ -1,12 +1,15 @@
-import Link from 'next/link';
 import { Facebook, Instagram, Youtube } from 'lucide-react';
+import { Gowun_Batang } from 'next/font/google';
+const gowunBatang = Gowun_Batang({ subsets: ['latin'], weight: '400' });
+import Link from 'next/link';
+
 const Footer = () => {
   return (
-    <footer className=''>
+    <footer>
       <div className="container">
         <div className="border-y-2 border-white mx-auto grid grid-cols-1 gap-x-8 gap-y-8 py-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col lg:border-r">
-            <h1 className='text-5xl mb-4'>Little Lemon</h1>
+            <h1 className={`${gowunBatang.className} text-5xl mb-4`}>Little Lemon</h1>
             <div className="flex items-center">
               <svg
                 width="50"
@@ -38,15 +41,35 @@ const Footer = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>About</td>
-                  <td>Gallery</td>
+                  <td>
+                    <Link key={1} href='#about' className='hidden md:inline-block hover-accent'>
+                      <p>About</p>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link key={2} href='#about' className='hidden md:inline-block hover-accent'>
+                      <p>Gallery</p>
+                    </Link>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Menu</td>
-                  <td>Testimonials</td>
+                  <td>
+                    <Link key={3} href='#about' className='hidden md:inline-block hover-accent'>
+                      <p>Menu</p>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link key={4} href='#about' className='hidden md:inline-block hover-accent'>
+                      <p>Testimonials</p>
+                    </Link>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Contact</td>
+                  <td>
+                    <Link key={5} href='#about' className='hidden md:inline-block hover-accent'>
+                      <p>Contact</p>
+                    </Link>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -64,7 +87,7 @@ const Footer = () => {
           <span>Back to Top</span>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }
 

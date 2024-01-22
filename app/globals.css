@@ -104,7 +104,7 @@
 
 /* Scrollbar thumb color */
 ::-webkit-scrollbar-thumb {
-  background-color: #5b564a36;
+  background-color: hsl(0, 3%, 8%);
   border: 1px solid #5B564A;
 }
 

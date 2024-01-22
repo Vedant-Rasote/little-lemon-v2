@@ -30,12 +30,24 @@ const Footer = () => {
                 <path d="M18 1570H1344" stroke="white" strokeWidth="36" strokeLinecap="round" />
               </svg>
               <div className='ml-3'>
-                <p>Questions? info@ll.com</p>
-                <p>Or call? +91 1234567890</p>
+                <div className='ml-3'>
+                  <p>
+                    Questions?{" "}
+                    <a href='mailto:info@ll.com' className='hover-accent'>
+                      info@ll.com
+                    </a>
+                  </p>
+                  <p>
+                    Or call?{" "}
+                    <a href='tel:+911234567890' className='hover-accent'>
+                      +91 1234567890
+                    </a>
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
-
           <div className='lg:border-r'>
             <table className="table-auto">
               <thead>

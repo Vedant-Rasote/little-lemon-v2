@@ -12,10 +12,10 @@ const About = () => {
                     <h1 className='text-4xl my-3'>Prize winning Mediterreanean cuisine</h1>
                     <p className='text-xl my-3'>We are a family-owned Mediterranean restaurant located in Chicago, Illinois. Our restaurant is known for its focus on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish cultures to create a unique fusion of flavors.</p>
                     <div className="flex my-4 space-x-3">
-                        <Link href='' className='inline hover-bg-accent p-2 border border-[#5b564a]'>
+                        <Link href='' className='interactive inline hover-bg-accent p-2 border border-[#5b564a]'>
                             <p>Reserve</p>
                         </Link>
-                        <Link href='' className='inline hover-bg-accent p-2 border border-[#5b564a]'>
+                        <Link href='' className='interactive inline hover-bg-accent p-2 border border-[#5b564a]'>
                             <p>Go to Menu</p>
                         </Link>
                     </div>

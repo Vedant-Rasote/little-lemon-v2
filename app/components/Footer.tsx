@@ -33,18 +33,17 @@ const Footer = () => {
                 <div className='ml-3'>
                   <p>
                     Questions?{" "}
-                    <a href='mailto:info@ll.com' className='hover-accent'>
+                    <a href='mailto:info@ll.com' className='interactive hover-accent'>
                       info@ll.com
                     </a>
                   </p>
                   <p>
                     Or call?{" "}
-                    <a href='tel:+911234567890' className='hover-accent'>
+                    <a href='tel:+911234567890' className='interactive hover-accent'>
                       +91 1234567890
                     </a>
                   </p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -58,31 +57,31 @@ const Footer = () => {
               <tbody>
                 <tr>
                   <td>
-                    <Link key={1} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#about', -200)}>
+                    <Link key={1} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#about', -200)}>
                       <p>About</p>
                     </Link>
                   </td>
                   <td>
-                    <Link key={2} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#gallery', -200)}>
+                    <Link key={2} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#gallery', -200)}>
                       <p>Gallery</p>
                     </Link>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <Link key={3} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#menu', -200)}>
+                    <Link key={3} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#menu', -200)}>
                       <p>Menu</p>
                     </Link>
                   </td>
                   <td>
-                    <Link key={4} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#testimonials', -200)}>
+                    <Link key={4} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#testimonials', -200)}>
                       <p>Testimonials</p>
                     </Link>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <Link key={5} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#contact', -200)}>
+                    <Link key={5} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#contact', -200)}>
                       <p>Contact</p>
                     </Link>
                   </td>
@@ -93,14 +92,14 @@ const Footer = () => {
 
           <div className='min-w-5'>
             <p className='py-3 font-semibold'>Folluw us</p>
-            <Instagram size={40} strokeWidth={1.75} absoluteStrokeWidth className='border-y-2 border-l-2 border-r p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
-            <Facebook size={40} strokeWidth={1.75} absoluteStrokeWidth className='border-y-2 border-x p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
-            <Youtube size={40} strokeWidth={1.75} absoluteStrokeWidth className='border-y-2 border-r-2 border-l p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
+            <Instagram size={40} strokeWidth={1.75} absoluteStrokeWidth className='interactive border-y-2 border-l-2 border-r p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
+            <Facebook size={40} strokeWidth={1.75} absoluteStrokeWidth className='interactive border-y-2 border-x p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
+            <Youtube size={40} strokeWidth={1.75} absoluteStrokeWidth className='interactive border-y-2 border-r-2 border-l p-2 transition-transform hover:transform hover:scale-95 hover:border-opacity-70 inline-block' />
           </div>
         </div>
         <div className="flex flex-wrap py-5 justify-between items-center">
           <span>Copyright (C) 2024 - Little Lemon</span>
-          <Link key={4} href='#about' className='hidden md:inline-block hover-accent' onClick={() => handleScroll('#hero', -200)}>
+          <Link key={4} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#hero', -200)}>
             <p>Back to Top</p>
           </Link>
         </div>

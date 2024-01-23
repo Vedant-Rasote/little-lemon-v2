@@ -68,7 +68,7 @@ const Testimonials = () => {
           <Carousel opts={{ align: "start" }} className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
+                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2 interactive">
                   <Parallax strength={50} className='' >
                     <article key={testimonial.id} className="embla__slide flex flex-col items-start justify-between p-5 border border-[#5b564a]">
                       <div className="flex items-center gap-x-4 text-xs">
@@ -100,8 +100,8 @@ const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className='left-5 md:left-10' />
-            <CarouselNext className='right-5 md:right-10' />
+            <CarouselPrevious className='interactive left-5 md:left-10' />
+            <CarouselNext className='interactive right-5 md:right-10' />
           </Carousel>
         </div>
       </div>

@@ -139,13 +139,23 @@ export const Contact = () => {
                   src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 ></iframe>
                 <ul className='mt-5'>
-                  <li className='my-2'>
-                    Call: <Link href="tel:+91234535473">+91 234535473</Link>
-                  </li>
-                  <li className='my-2'>
-                    Email: <Link href="mailto:info@mysite.com">info@mysite.com</Link>
-                  </li>
                   <li className='my-2'>Address: 123 Lemon Grove, Chicago, IL 60601</li>
+                  <li className='my-2'>
+                    <p>
+                      Call:{" "}
+                      <a href='tel:+911234567890' className='interactive hover-accent'>
+                        +91 1234567890
+                      </a>
+                    </p>
+                  </li>
+                  <li className='my-2'>
+                    <p>
+                      Email:{" "}
+                      <a href='mailto:info@ll.com' className='interactive hover-accent'>
+                        info@ll.com
+                      </a>
+                    </p>
+                  </li>
                 </ul>
               </div>
             </div>

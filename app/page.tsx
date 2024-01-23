@@ -2,6 +2,7 @@ import About from "./components/About";
 import Awards from "./components/Awards";
 import BigImage from "./components/BigImage";
 import Contact from "./components/Contact";
+import Cursor from "./components/Cursor";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
@@ -12,6 +13,7 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <>
+      <Cursor />
       <Navbar />
       <Hero />
       <About />

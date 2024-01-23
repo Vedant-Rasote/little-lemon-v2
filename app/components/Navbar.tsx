@@ -49,7 +49,7 @@ const Navbar = () => {
                 <nav className='flex flex-wrap flex-row justify-between align-middle py-5 border-white border-b-2'>
                     <div className='space-x-4 self-center'>
                         {links.left.map((link) => (
-                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent' onClick={() => handleScroll(link.scroll, link.href, -200)}>
+                            <Link key={link.text} href={link.href} className='interactive hidden md:inline-block hover-accent' onClick={() => handleScroll(link.scroll, link.href, -200)}>
                                 <p>{link.text}</p>
                             </Link>
                         ))}
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <div className="w-100"></div>
                     <div className='space-x-4 self-center'>
                         {links.right.map((link) => (
-                            <Link key={link.text} href={link.href} className='hidden md:inline-block hover-accent' onClick={() => handleScroll(link.scroll, link.href, -200)}>
+                            <Link key={link.text} href={link.href} className='interactive hidden md:inline-block hover-accent' onClick={() => handleScroll(link.scroll, link.href, -200)}>
                                 <p>{link.text}</p>
                             </Link>
                         ))}
@@ -96,7 +96,7 @@ const Navbar = () => {
                     ))}
                 </div>
             </div>
-            <Link href='/' className='absolute top-5 left-1/2 transform -translate-x-1/2 rounded-md bg-body'>
+            <Link href='/' className='interactive absolute top-5 left-1/2 transform -translate-x-1/2 rounded-md bg-body'>
                 <svg
                     viewBox="0 0 1362 1588"
                     xmlns="http://www.w3.org/2000/svg"

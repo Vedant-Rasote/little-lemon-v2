@@ -57,31 +57,31 @@ const Footer = () => {
               <tbody>
                 <tr>
                   <td>
-                    <Link key={1} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#about', -200)}>
+                    <Link key={1} href='#about' className='md:inline-block interactive hover-accent' onClick={() => handleScroll('#about', -200)}>
                       <p>About</p>
                     </Link>
                   </td>
                   <td>
-                    <Link key={2} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#gallery', -200)}>
+                    <Link key={2} href='#about' className='md:inline-block interactive hover-accent' onClick={() => handleScroll('#gallery', -200)}>
                       <p>Gallery</p>
                     </Link>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <Link key={3} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#menu', -200)}>
+                    <Link key={3} href='#about' className='md:inline-block interactive hover-accent' onClick={() => handleScroll('#menu', -200)}>
                       <p>Menu</p>
                     </Link>
                   </td>
                   <td>
-                    <Link key={4} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#testimonials', -200)}>
+                    <Link key={4} href='#about' className='md:inline-block interactive hover-accent' onClick={() => handleScroll('#testimonials', -200)}>
                       <p>Testimonials</p>
                     </Link>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <Link key={5} href='#about' className='hidden md:inline-block interactive hover-accent' onClick={() => handleScroll('#contact', -200)}>
+                    <Link key={5} href='#about' className='md:inline-block interactive hover-accent' onClick={() => handleScroll('#contact', -200)}>
                       <p>Contact</p>
                     </Link>
                   </td>
